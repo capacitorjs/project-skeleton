@@ -2,7 +2,12 @@
 
 ## To Use
 
-`$ ./setup.sh`
+```bash
+#clone this repository
+git clone --depth 1 https://github.com/capacitorjs/project-skeleton.git <PROJECT_NAME>
+cd <PROJECT_NAME>
+bash setup.sh
+```
 
 ## About
 
