@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
-echo -n "Enter project name: "
-read PROJECT
+PROJECT=${PWD##*/}
+
 echo -n "Enter project description: "
 read -e DESCRIPTION
+echo -n "Enter full name: "
+read AUTHOR
 echo -n "Enter github username: "
 read GITHUB_USER
 
@@ -14,13 +16,17 @@ substitute() {
   sed -i "s/${VARIABLE_NAME}/${REPLACEMENT}/g" package.json
 }
 
-gen_readme() {
-  printf "#${PROJECT}\n\n${DESCRIPTION}\n" > README.md
-}
-
 substitute 'PROJECT' ${PROJECT}
 substitute 'DESCRIPTION' "${DESCRIPTION}"
+substitute 'AUTHOR' "${AUTHOR}"
 substitute 'GITHUB_USER' ${GITHUB_USER}
-gen_readme
+
+# generate readme
+printf "#${PROJECT}\n\n${DESCRIPTION}\n" > README.md
+
+# setup project git
+rm -rf .git
+git init
+git remote add origin "https://github.com/${GITHUB_USER}/${PROJECT}.git"
 
 rm setup.sh
