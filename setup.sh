@@ -13,7 +13,7 @@ substitute() {
   VARIABLE_NAME=$1
   REPLACEMENT=$2
 
-  sed -i "s/${VARIABLE_NAME}/${REPLACEMENT}/g" package.json
+  sed -i '' "s/${VARIABLE_NAME}/${REPLACEMENT}/g" package.json
 }
 
 substitute 'PROJECT' ${PROJECT}
@@ -22,7 +22,7 @@ substitute 'AUTHOR' "${AUTHOR}"
 substitute 'GITHUB_USER' ${GITHUB_USER}
 
 # generate readme
-printf "#${PROJECT}\n\n${DESCRIPTION}\n" > README.md
+printf "# ${PROJECT}\n\n${DESCRIPTION}\n" > README.md
 
 # setup project git
 rm -rf .git
