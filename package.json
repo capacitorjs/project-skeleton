@@ -2,7 +2,7 @@
   "name": "PROJECT",
   "version": "0.0.0",
   "description": "DESCRIPTION",
-  "main": "index.js",
+  "main": "lib/PROJECT.js",
   "scripts": {
     "test": "gulp test",
     "ci-test": "gulp dist"
