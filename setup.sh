@@ -14,6 +14,7 @@ substitute() {
   REPLACEMENT=$2
 
   sed -i '' "s/${VARIABLE_NAME}/${REPLACEMENT}/g" package.json
+  sed -i '' "s/${VARIABLE_NAME}/${REPLACEMENT}/g" gulpfile.js
 }
 
 substitute 'PROJECT' ${PROJECT}
@@ -23,6 +24,10 @@ substitute 'GITHUB_USER' ${GITHUB_USER}
 
 # generate readme
 printf "# ${PROJECT}\n\n${DESCRIPTION}\n" > README.md
+
+# prepare source
+mkdir src
+touch src/${PROJECT}.js
 
 # setup project git
 rm -rf .git
