@@ -19,7 +19,7 @@
   "homepage": "https://github.com/GITHUB_USER/PROJECT#readme",
   "license": "CC0-1.0",
   "devDependencies": {
-    "eslintrc": "git+https://github.com/capacitorjs/eslintrc.git#v1.0.0",
+    "capacitor-eslintrc": "git+https://github.com/capacitorjs/eslintrc.git#v1.1.0",
     "gulp": "^3.9.0",
     "gulp-capacitorjs-common": "git+https://github.com/capacitorjs/gulp-capacitorjs-common.git#v0.1.2"
   }
