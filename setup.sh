@@ -13,8 +13,8 @@ substitute() {
   VARIABLE_NAME=$1
   REPLACEMENT=$2
 
-  sed -i '' "s/${VARIABLE_NAME}/${REPLACEMENT}/g" package.json
-  sed -i '' "s/${VARIABLE_NAME}/${REPLACEMENT}/g" gulpfile.js
+  sed -i'' -e "s/${VARIABLE_NAME}/${REPLACEMENT}/g" package.json
+  sed -i'' -e "s/${VARIABLE_NAME}/${REPLACEMENT}/g" gulpfile.js
 }
 
 substitute 'PROJECT' ${PROJECT}
