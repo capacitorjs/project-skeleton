@@ -2,17 +2,26 @@
 'use strict';
 
 var common = require('gulp-capacitorjs-common');
-common.config.src.out = 'PROJECT.js';
-common.config.src.main = 'src/PROJECT.js';
+var initialConfig = {
+  src: {
+    out: 'PROJECT.js',
+    main: 'src/PROJECT.js'
+  }
+};
 /*
  // don't bundle dependencies
- common.config.src.externals = {
+ initialConfig.src.externals = {
    underscore: {
      amd: 'underscore',
      commonjs: 'underscore',
      commonjs2: 'underscore',
      root: '_'
    }
-}
-*/
-common.registerCommon();
+ }
+ */
+var config = common.config(initialConfig);
+/*
+  // modify webpack settigns
+  config.webpack.output.libraryTarget = 'var';
+ */
+common.registerCommon(config);

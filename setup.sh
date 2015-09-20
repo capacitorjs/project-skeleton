@@ -23,7 +23,8 @@ substitute 'AUTHOR' "${AUTHOR}"
 substitute 'GITHUB_USER' ${GITHUB_USER}
 
 # generate readme
-printf "# ${PROJECT}\n\n${DESCRIPTION}\n" > README.md
+echo "[![Build Status](https://travis-ci.org/${GITHUB_USER}/${PROJECT}.svg?branch=master)](https://travis-ci.org/${GITHUB_USER}/${PROJECT})" > README.md
+printf "# ${PROJECT}\n\n${DESCRIPTION}\n" >> README.md
 
 # prepare source
 mkdir src
